@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes slide-in-from-left-52 {
+  0% {
+    transform: translateX(
+      -13rem
+    ); /* -52px * 4 (assuming your base font-size is 16px) */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-from-right-52 {
+  0% {
+    transform: translateX(
+      13rem
+    ); /* 52px * 4 (assuming your base font-size is 16px) */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%; /* adjust this value as needed for mobile devices */
+    padding: 10px;
+  }
+}
+
+.grecaptcha-badge {
+  z-index: 99999;
+  display:block !important;
+}
+
+/* Important CSS! */
+.IOS-black {
+  -webkit-text-fill-color: #000000;
+  opacity: 1; /* required on iOS */
+}
+
+.IOS-blue {
+  -webkit-text-fill-color: #2966cc;
+opacity: 1; /* required on iOS */
+}
+
+.IOS-light-gray {
+  -webkit-text-fill-color: #9b9b9b3d;
+  opacity: 1; /* required on iOS */
+  z-index: 0;
+}
+
+.IOS-white {
+  color: rgb(255, 255, 255);
+  text-shadow: none;
+  opacity: 1;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.IOS-gray {
+  color: rgb(31, 41, 55);
+  text-shadow: none;
+  opacity: 1;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.IOS-gray:hover {
+  color: #2966cc;
+  text-shadow: 0 0 5px rgba(202, 255, 132, 0.5);
+}
+
+
+.animate-fade-in-from-right {
+  opacity: 0;
+  position: relative;
+  right: -100px;
+  transform: scale(0.7); /* initial scale set to 70% */
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s; /* 2s delay before animation starts */
+}
+
+@keyframes fadeInFromRight {
+  0% {
+    opacity: 0;
+    right: -100px;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+    transform: scale(1); /* scale set to 100% */
+  }
+}
+
+.animate-fade-in-from-right {
+  animation-name: fadeInFromRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.IOS-black {
+  -webkit-text-fill-color: #000000;
+  opacity: 1; /* required on iOS */
+}
+
+.custom-shape-divider-top-1681418017 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1681418017 svg {
+  position: relative;
+  display: block;
+  width: calc(165% + 1.3px);
+  height: 243px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1681418017 .shape-fill {
+  fill: #2965ccf6;
+}
+
+#swiper-color .swiper-button-next {
+  color: #2965ccf6;
+}
+
+#swiper-color .swiper-button-prev {
+  color: #2965ccf6;
+}
+
+.radialContainer {
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* Gradient Read More Fade */
+.sidebar-box {
+  max-height: 590px;
+  position: relative;
+  overflow: hidden;
+}
+.read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 15px 0;
+  height: 10rem;
+
+  /* "transparent" only works here because == rgba(0,0,0,0) */
+  background-image: linear-gradient(to bottom, transparent, rgb(255, 255, 255));
+}
+
+.dense-grid {
+  grid-auto-flow: dense;
+}
+
+.scrollable {
+  overflow-y: auto;
+}
+
+.radialContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+
+/* globals.css */
+/* Assuming the dangerously set HTML is inside a div with a class of .blog-post or some specific container */
+.blog-post a {
+  @apply text-blue-800 hover:text-blue-700 underline;
+}
+
+.blog-post ol {
+  @apply list-decimal pl-5 text-black;
+}
+
+.blog-post ul {
+  @apply list-disc pl-5 text-black;
+}
+
+.blog-post li {
+  @apply my-2 text-black;
+}
+
+.blog-post p {
+  @apply my-4 text-black;
+}
+
+.blog-post h1 {
+  @apply text-2xl font-bold my-4 text-black;
+}
+
+.blog-post h2 {
+  @apply text-3xl font-semibold my-6 text-center text-black;
+}
+.blog-post h3 {
+  @apply text-4xl font-semibold my-3 text-primaryDark;
+}
+.blog-post h4 {
+  @apply text-2xl font-semibold my-6 text-primary;
+}
+.blog-post h5 {
+  @apply text-xl font-semibold my-3 text-black;
+}
+.blog-post h6 {
+  @apply text-xl font-semibold my-3 text-black;
+}
