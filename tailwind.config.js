@@ -47,6 +47,8 @@ module.exports = {
         accent: "#532570", // Sir Suds Purple
         danger: "#FF0000",
         destructive: "#FF0000",
+        "pnnl": "#d77900",
+        "pnnlRed": "#d77900"
       },
       keyframes: {
         "accordion-down": {
