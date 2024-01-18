@@ -3,45 +3,17 @@
 @tailwind utilities;
 
 
-@keyframes slide-in-from-left-52 {
-  0% {
-    transform: translateX(
-      -13rem
-    ); /* -52px * 4 (assuming your base font-size is 16px) */
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-from-right-52 {
-  0% {
-    transform: translateX(
-      13rem
-    ); /* 52px * 4 (assuming your base font-size is 16px) */
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 @media screen and (max-width: 767px) {
   .container {
     width: 100%; /* adjust this value as needed for mobile devices */
     padding: 10px;
   }
+}
+
+.borderless {
+  border-style: none;
+  color:blueviolet;
 }
 
 .grecaptcha-badge {
@@ -86,33 +58,6 @@ opacity: 1; /* required on iOS */
 }
 
 
-.animate-fade-in-from-right {
-  opacity: 0;
-  position: relative;
-  right: -100px;
-  transform: scale(0.7); /* initial scale set to 70% */
-  animation-fill-mode: forwards;
-  animation-delay: 0.5s; /* 2s delay before animation starts */
-}
-
-@keyframes fadeInFromRight {
-  0% {
-    opacity: 0;
-    right: -100px;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    right: 0;
-    transform: scale(1); /* scale set to 100% */
-  }
-}
-
-.animate-fade-in-from-right {
-  animation-name: fadeInFromRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-}
 
 .IOS-black {
   -webkit-text-fill-color: #000000;

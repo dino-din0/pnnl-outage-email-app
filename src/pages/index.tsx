@@ -515,43 +515,55 @@ export default function TestingPNNLEmails() {
           </div>
         </div>
       </div>
-      <div className="py-20 flex flex-col w-full h-full z-10 text-center items-center">
+      <div className="py-20 flex flex-col w-full h-full z-10 text-center items-center border-0 borderless">
         <div
           ref={contentRef}
           className="flex w-full flex-col text-center items-center"
         >
-          <p style={{ textAlign: "center" }}>
+          <p style={{ textAlign: "center", border: "none", }}>
             <span
               style={{
                 fontSize: "20.0pt",
                 // fontFamily: '"Century Gothic", sans-serif',
                 color: "white",
                 background: "blue",
-                padding: "5px",
+                padding: "5px", 
+                border: "none",
+                // color:"#8a2be2",
               }}
             >
-              <strong>
+              <strong
+              style={{
+                border: "none",
+              }}>
                 <u>NOTICE</u>
               </strong>
             </span>
           </p>
 
-          <p style={{}}>&nbsp;</p>
+          <p style={{
+            border: "none",
+          }}>&nbsp;</p>
 
           <p
             style={{
               textAlign: "center",
               color: "black",
               fontSize: "14.0pt",
+              border: "none",
               // fontFamily: '"Century Gothic", sans-serif',
             }}
           >
-            <strong>{formValues.titleAndPurpose}</strong>
+            <strong
+            style={{
+              border: "none",
+            }}>{formValues.titleAndPurpose}</strong>
           </p>
 
           <p
             style={{
               fontSize: "14.0pt",
+              border: "none",
               // fontFamily: '"Century Gothic", sans-serif',
             }}
           >
@@ -563,10 +575,19 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               color: "black",
               fontSize: "14.0pt",
+              border: "none",
               // fontFamily: '"Century Gothic", sans-serif',
             }}
           >
-            <strong>Why:</strong>&nbsp;
+            <strong             
+            style={{
+              textAlign: "center",
+              color: "black",
+              fontSize: "14.0pt",
+              border: "none",
+              // fontFamily: '"Century Gothic", sans-serif',
+            }}>
+              Why:</strong>&nbsp;
             {formValues.why}
           </p>
 
@@ -575,6 +596,7 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               fontSize: "14.0pt",
               // fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
             &nbsp;
@@ -584,13 +606,20 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               color: "black",
               fontSize: "14.0pt",
+              border: "none",
               // fontFamily: '"Century Gothic", sans-serif',
             }}
           >
-            <strong>When:</strong>&nbsp;
-            <strong>
+            <strong
+            style={{
+              border: "none",
+            }}>When:</strong>&nbsp;
+            <strong
+            style={{
+              border: "none",
+            }}>
               <span
-                style={{ color: "black", background: "yellow" }}
+                style={{ color: "black", background: "yellow", border: "none", }}
                 dangerouslySetInnerHTML={{ __html: formValues.when }}
               />
             </strong>
@@ -629,6 +658,7 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               fontSize: "14.0pt",
               fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
             &nbsp;
@@ -640,12 +670,19 @@ export default function TestingPNNLEmails() {
               color: "black",
               fontSize: "14.0pt",
               fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
-            <strong>Where/Affected Area:</strong>&nbsp;
+            <strong
+              style={{
+                border: "none",
+              }}>Where/Affected Area:</strong>&nbsp;
             <span
               dangerouslySetInnerHTML={{
                 __html: formValues.whereAndAffectedArea,
+              }}
+              style={{
+                border: "none",
               }}
             />
           </p>
@@ -655,6 +692,7 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               fontSize: "14.0pt",
               // fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
             &nbsp;
@@ -666,10 +704,17 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               fontSize: "14.0pt",
               // fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
-            <strong>Restrictions:</strong>&nbsp;&nbsp;
-            <span style={{ color: "red" }}>{formValues.restrictions}</span>
+            <strong
+            style={{
+              border: "none",
+            }}>Restrictions:</strong>&nbsp;&nbsp;
+            <span style={{ 
+              color: "red",
+              border: "none",}}>
+                {formValues.restrictions}</span>
           </p>
 
           <p
@@ -677,6 +722,7 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               fontSize: "14.0pt",
               // fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
             &nbsp;
@@ -688,6 +734,7 @@ export default function TestingPNNLEmails() {
               fontSize: "14.0pt",
               // fontFamily: '"Century Gothic", sans-serif',
               color: "#0070C0",
+              border: "none",
             }}
           >
             As a general safety reminder, we ask that you be cognizant of the
@@ -700,6 +747,7 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               fontSize: "14.0pt",
               // fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
             &nbsp;
@@ -711,6 +759,7 @@ export default function TestingPNNLEmails() {
               textAlign: "center",
               fontSize: "14.0pt",
               // fontFamily: '"Century Gothic", sans-serif',
+              border: "none",
             }}
           >
             {formValues.questionAuthorities}
