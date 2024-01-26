@@ -616,10 +616,9 @@ export default function TestingPNNLEmails() {
             }}>When:</strong>&nbsp;
             <strong
             style={{
-              border: "none",
+              color: "black", background: "yellow", border: "none", 
             }}>
               <span
-                style={{ color: "black", background: "yellow", border: "none", }}
                 dangerouslySetInnerHTML={{ __html: formValues.when }}
               />
             </strong>
