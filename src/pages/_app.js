@@ -41,27 +41,27 @@ function App({ Component, pageProps = {}, metadata, recentPosts, categories, men
   );
 }
 
-App.getInitialProps = async function (appContext) {
-  const appProps = await NextApp.getInitialProps(appContext);
+// App.getInitialProps = async function (appContext) {
+//   const appProps = await NextApp.getInitialProps(appContext);
 
-  const { posts: recentPosts } = await getRecentPosts({
-    count: 5,
-    queryIncludes: 'index',
-  });
+//   const { posts: recentPosts } = await getRecentPosts({
+//     count: 5,
+//     queryIncludes: 'index',
+//   });
 
-  const { categories } = await getCategories({
-    count: 5,
-  });
+//   const { categories } = await getCategories({
+//     count: 5,
+//   });
 
-  const { menus = [] } = await getAllMenus();
+//   const { menus = [] } = await getAllMenus();
 
-  return {
-    ...appProps,
-    metadata: await getSiteMetadata(),
-    recentPosts,
-    categories,
-    menus,
-  };
-};
+//   return {
+//     ...appProps,
+//     metadata: await getSiteMetadata(),
+//     recentPosts,
+//     categories,
+//     menus,
+//   };
+// };
 
 export default App;
