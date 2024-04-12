@@ -9,6 +9,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Link as ScrollLink } from 'react-scroll';
+import { scroller } from 'react-scroll';
+
 
 // #d77900
 // Add a sweet button to the top right of the form to clear it
@@ -53,7 +55,7 @@ export default function TestingPNNLEmails() {
   const [formValues, setFormValues] = useState({
     titleAndPurpose: 'PSF Facilities Chilled Water/Compressed Air Outage to support LSW Construction',
     why: 'Contractors will be replacing a chilled water supply line valve',
-    when: 'December 8<sup>th</sup> , 6:00 AM - December 9<sup>th</sup>, 8:00 PM',
+    when: 'December 8th, 6:00 AM - December 9th, 8:00 PM',
     whereAndAffectedArea:
       'There will be no chilled or process water cooling available for the PSF facilities (2314, 1235, 1234, 3234, 7777, 4563, 5678, 4563, 3456). <br></br> There will be no compressed air available for the PSF facilities (6643, 2345, 5432, 1324, 5534, 2234, 5543, 2234, 5543).',
     restrictions:
@@ -149,15 +151,36 @@ export default function TestingPNNLEmails() {
 
     // Reset the formFormEmail form
     formFormEmail.reset({
-      titleAndPurpose: "",
-      why: "",
-      when: "",
-      whereAndAffectedArea: "",
-      restrictions: "",
-      questionAuthorities: "",
-    })
+      titleAndPurpose: '',
+      why: '',
+      when: '',
+      whereAndAffectedArea: '',
+      restrictions: '',
+      questionAuthorities: '',
+    });
+ setTimeout(() => {
+    // Using react-scroll's 'scroll' function directly to navigate
+    scroller.scrollTo('contactSection', {
+      duration: 1400,
+      delay: 100,
+      smooth: true,
+      offset: 50, // Adjust based on your layout
+    });
+  }, 200); // Adjust delay as necessary
 
     setSubmissionFormFeedback(true);
+    // setTimeout(() => {
+    //   // window.scrollTo(500, document.documentElement.scrollHeight);
+    //   window.scrollTo({top: 4000, left: 0, behavior: 'smooth' });
+
+    // }, 500); // Adjust the delay (in milliseconds) as needed
+
+    // const targetElement = document.querySelector('.scroll-target');
+
+    // // If the element exists, scroll to it
+    // if (targetElement) {
+    //   targetElement.scrollIntoView({ behavior: 'smooth' });
+    // }
 
     // Set a timeout to hide the checkmark after 0.5 seconds
     setTimeout(() => {
@@ -348,25 +371,36 @@ export default function TestingPNNLEmails() {
                     </FormItem>
                   )}
                 />
-                <ScrollLink 
-                  activeClass="active"
-                  to="contactSection"
-                  spy={true}
-                  smooth={true}
-                  // offset={-90}
-                  duration={1400}
-                  >
+
                 <div className="flex gap-6 items-center h-fit mt-6">
-                  
-                  <Button
+                  {/* <Button
                     className={`h-12 w-48 rounded-sm  drop-shadow-2xl text-lg hover:bg-[#5a0b0d] fade-bg-transition ${
                       submissionFormFeedback ? 'bg-green-600 hover:bg-green-600' : 'bg-[#911a1d]'
                     }`}
                     type="submit"
                   >
+                    <ScrollLink
+                      activeClass="active"
+                      to="contactSection"
+                      spy={true}
+                      smooth={true}
+                      // offset={-90}
+                      duration={1400}
+                    >
+                      {submissionFormFeedback ? <Check /> : 'Create Notice'}
+                    </ScrollLink>
+                  </Button> */}
+                  <Button
+                    className={`h-12 w-48 rounded-sm  drop-shadow-2xl text-lg hover:bg-[#5a0b0d] fade-bg-transition ${
+                      submissionFormFeedback ? 'bg-green-600 hover:bg-green-600' : 'bg-[#911a1d]'
+                    }`}
+                    type="button" // Change this to "submit" if it's not submitting the form as expected.
+                    onClick={() => formFormEmail.handleSubmit(onSubmitForm)()} // Immediately invoke the handler
+                    // disabled={!formFormEmail.formState.isValid} // Optionally disable the button if the form is not valid
+                  >
                     {submissionFormFeedback ? <Check /> : 'Create Notice'}
                   </Button>
-                  
+
                   <Button
                     disabled={allowNoticeCopy}
                     className={`h-12 rounded-sm w-64 drop-shadow-2xl text-lg ${
@@ -377,9 +411,8 @@ export default function TestingPNNLEmails() {
                   >
                     {copyFormSuccess ? 'Copied!' : 'Copy Notice to Clipboard'}
                   </Button>
-
                 </div>
-                </ScrollLink>
+
                 {/* {formDone && (
                 <div className="text-lg font-bold text-cws-blue text-center w-[80%]">
                   Your form has been successfully submitted and we will get back
@@ -466,7 +499,7 @@ export default function TestingPNNLEmails() {
           </div>
         </div>
       </div>
-      <div className="py-20 flex flex-col w-full h-full z-10 text-center items-center border-0 borderless contactSection">
+      <div className="py-20 flex flex-col w-full h-full z-10 text-center items-center border-0 borderless contactSection scroll-target">
         <div ref={contentRef} className="flex w-full flex-col text-center items-center">
           <p style={{ textAlign: 'center', border: 'none' }}>
             <span
@@ -739,10 +772,10 @@ export default function TestingPNNLEmails() {
             {formValues.questionAuthorities}
           </p>
 
-{/* Autoscroll */}
-<div className='font-medium text-xl text-black'> 
-  <br/> Outage Point(s) of Contact:
-</div>
+          {/* Autoscroll */}
+          <div className="font-medium text-xl text-black">
+            <br /> Outage Point(s) of Contact:
+          </div>
           <div className="container mx-auto w-auto text-black text-center">
             <table className="table-auto w-full text-left">
               <thead>
